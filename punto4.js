@@ -50,6 +50,14 @@ const data ={
         4: ['Lacks all proficiency'],
         5: ['No attempt made'],
     },
+    Recompensa: {
+        0: ['Beca 100%'],
+        1: ['Beca 80%'],
+        2: ['Beca 50%'],
+        3: ['Puedes ser mejor'],
+        4: ['Matricua condidiconal'],
+        5: ['PFU']
+    },
     resultado:function(){
         let i=-1;
         let nota = parseInt('');
@@ -64,7 +72,7 @@ const data ={
         if(isNaN(mul))mul=0;
         let fin=(this.Traditional[i][1])-nota;
         let nueva_nota=this.Point_Range[i][1]-(fin*mul)
-        return  `Nota anterior ${nota} \nEquivalente ${nueva_nota}\nLetra ${this.Letter[i]}\nSBG ${this.SBG_Rating[i]}\nRecomendacion: ${this.Proficiency_level_witch_standard[i]}`
+        return  `Nota anterior ${nota} \nEquivalente ${nueva_nota}\nLetra ${this.Letter[i]}\nSBG ${this.SBG_Rating[i]}\nPLWS ${this.Proficiency_level_witch_standard[i]}\nRecompensa ${this.Recompensa[i]}`
 
     }
 }
