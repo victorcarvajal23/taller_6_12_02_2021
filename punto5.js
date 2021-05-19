@@ -5,22 +5,25 @@
 //  cada uno de los 40 alumnos y escriba la cantidad de 
 //  ellos que no tienen derecho al examen de nivelación.
 const obje={
-    estu : function (){
-        return prompt("ingrese El numero de estudiantes");
-    },
-    notas:[],
-    estudiante:[],
+    nuevo:[],
     calculo :function(){
-        let estu = parseInt('');
-        do{
-            if(isNaN(estu))estu = this.estu();
-        }while (isNaN(estu));
-
-
-
-        return estu
+        let estudiantes=2;
+        let promedio=new Array(estudiantes).fill(0)
+        let uno=[]
+        for (let i = 0; i < estudiantes; i++) {
+            this.nuevo.push(i)
+            uno=[];
+            for (let j = 0; j < 5; j++) {
+            uno.push(parseInt(prompt(`ingrese nota ${j+1} del estudiante ${i+1}`)));
+            //if(typeof uno[j]!=="number"){j--}
+            this.nuevo[i]=uno;
+            promedio[i]=(promedio[i]+(uno[j]/5));
+            }
+        }        
+        return console.log({presenta:promedio.filter(promedio=>promedio>= 30).length,
+            pierde:promedio.filter(promedio=>promedio< 30).length});
 
     }
 }
 const ob=Object.create(obje);
-console.log(ob.calculo());
+ob.calculo();
